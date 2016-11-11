@@ -31,7 +31,13 @@ In your own words, define what the responsibilities of the model layer are in
 Rails.
 
 ```md
-<!-- your answer here -->
+The responsiblity of the model layer is to talk to the database and perform the
+business logic.  It takes in a request from the controller and then passes the
+resource being requested back to it.
+
+Resources:
+https://betterexplained.com/articles/starting-ruby-on-rails-what-i-wish-i-knew/
+https://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/
 ```
 
 ## Define Controller Responsiblities
@@ -40,7 +46,15 @@ In your own words, define what the responsibilities of the controller layer are
 in Rails.
 
 ```md
-<!-- your answer here -->
+The responsibility of the controller layer is to take user input, call model
+methods to determine what to do based on the input, pass the output of those
+methods to the view and finally take the response body and metadata from the
+view and send it back to the web server.
+
+Resources:
+https://betterexplained.com/articles/starting-ruby-on-rails-what-i-wish-i-knew/
+https://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/
+http://guides.rubyonrails.org/action_controller_overview.html
 ```
 
 ## Define Router Responsiblities
@@ -48,7 +62,11 @@ in Rails.
 In your own words, define what the router does in Rails.
 
 ```md
-<!-- your answer here -->
+The router determines which controller the user’s request should be sent to.
+
+Resources:
+https://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/
+http://guides.rubyonrails.org/routing.html
 ```
 
 ## The Request-Response Cycle in Rails
@@ -57,5 +75,16 @@ Starting with a client making a GET request to a particular URL, describe how
 the parts of Rails interact to produce and send a response.
 
 ```md
-<!-- your answer here -->
+The client makes a GET request, that request is sent to the web server which
+uses routes to determine which controller to send the request to.  The
+controller parses the request and asks the model to get the requested resource.
+ The model communicates to the database and performs the business logic to
+ retrieve that resource and sends it back to the controller.  The controller
+ then sends the resource to the view which generates whatever it is the user
+ should see based on the resource and then passes it back to the controller
+ again. The controller then sends the response body to the web server which 
+ turns it into a valid HTTP response to the user.
+
+Resources:
+https://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/
 ```
